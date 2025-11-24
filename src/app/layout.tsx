@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import GrainOverlay from "@/components/GrainOverlay";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -31,9 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} antialiased bg-fashion-black text-paper-white`}
+        className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} antialiased bg-fashion-black text-paper-white cursor-none`}
         suppressHydrationWarning
       >
+        <CustomCursor />
+        <GrainOverlay />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

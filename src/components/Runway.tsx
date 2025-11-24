@@ -39,14 +39,16 @@ export default function Runway() {
     });
 
     const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+    const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
+    const y2 = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
     return (
-        <section ref={containerRef} className="relative py-24 px-4 md:px-12 min-h-screen">
+        <section ref={containerRef} className="relative py-24 px-6 md:px-20 min-h-screen">
             <h2 className="text-[10vw] font-playfair leading-none mb-20 text-center md:text-left opacity-20">
                 THE RUNWAY
             </h2>
 
-            <div className="relative max-w-4xl mx-auto">
+            <div className="relative max-w-6xl mx-auto">
                 {/* Center Line */}
                 <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2">
                     <motion.div
@@ -63,13 +65,16 @@ export default function Runway() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8 }}
-                            className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                            className={`relative flex flex-col md:flex-row gap-12 md:gap-24 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
                                 }`}
                         >
                             {/* Timeline Dot */}
                             <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-fashion-black border-2 border-electric-blue rounded-full -translate-x-[calc(50%-0.5px)] mt-2 z-10" />
 
-                            <div className="flex-1 md:w-1/2 relative h-[300px] md:h-auto overflow-hidden group">
+                            <motion.div
+                                style={{ y: index % 2 === 0 ? y1 : y2 }}
+                                className="flex-1 md:w-1/2 relative h-[300px] md:h-[400px] overflow-hidden group"
+                            >
                                 <div className="absolute inset-0 bg-electric-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <Image
                                     src={index % 2 === 0
@@ -78,22 +83,22 @@ export default function Runway() {
                                     }
                                     alt="Tech Abstract"
                                     fill
-                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
                                 />
-                            </div>
+                            </motion.div>
 
                             <div className="flex-1 md:w-1/2 pl-8 md:pl-0">
                                 <div className={`flex flex-col ${index % 2 === 0 ? "md:items-start" : "md:items-end md:text-right"}`}>
                                     <span className="font-jetbrains text-electric-blue text-sm mb-2">
                                         {exp.period}
                                     </span>
-                                    <h3 className="text-3xl md:text-4xl font-playfair mb-1">
+                                    <h3 className="text-3xl md:text-5xl font-playfair mb-2">
                                         {exp.company}
                                     </h3>
-                                    <h4 className="text-xl font-light text-gray-400 mb-4">
+                                    <h4 className="text-xl font-light text-gray-400 mb-6">
                                         {exp.role}
                                     </h4>
-                                    <ul className={`space-y-2 text-sm text-gray-300 font-light ${index % 2 === 0 ? "" : "md:items-end"}`}>
+                                    <ul className={`space-y-3 text-sm text-gray-300 font-light ${index % 2 === 0 ? "" : "md:items-end"}`}>
                                         {exp.description.map((item, i) => (
                                             <li key={i} className="flex gap-2">
                                                 <span className="text-electric-blue/50">▹</span>

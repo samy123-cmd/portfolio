@@ -2,10 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import MagneticButton from "./MagneticButton";
+import { Download } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative h-screen w-full flex flex-col justify-between p-4 md:p-12 overflow-hidden">
+        <section className="relative h-screen w-full flex flex-col justify-between p-6 md:p-20 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <Image
@@ -19,34 +21,49 @@ export default function Hero() {
                 <div className="absolute bottom-0 left-0 w-[30vw] h-[30vh] bg-gradient-to-t from-white/5 to-transparent blur-[80px]" />
             </div>
 
+            {/* Header / Nav */}
+            <div className="relative z-20 flex justify-between items-start">
+                <div className="font-playfair text-xl tracking-widest">AV.</div>
+                <MagneticButton>
+                    <a
+                        href="/resume.pdf"
+                        download
+                        className="flex items-center gap-2 px-6 py-3 border border-white/20 rounded-full hover:bg-white hover:text-fashion-black transition-colors duration-300 backdrop-blur-sm"
+                    >
+                        <span className="font-jetbrains text-xs tracking-wider">RESUME</span>
+                        <Download size={14} />
+                    </a>
+                </MagneticButton>
+            </div>
+
             {/* Masthead */}
-            <div className="relative z-10 mt-20">
+            <div className="relative z-10 mt-10 md:mt-0">
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <h1 className="text-[12vw] leading-[0.8] tracking-tighter font-playfair mix-blend-difference text-paper-white">
+                    <h1 className="text-[15vw] leading-[0.8] tracking-tighter font-playfair mix-blend-difference text-paper-white">
                         AYUSHI
                         <br />
-                        <span className="ml-[10vw]">VIJAY</span>
+                        <span className="ml-[12vw]">VIJAY</span>
                     </h1>
                 </motion.div>
             </div>
 
             {/* Subtitle / Tech Specs */}
-            <div className="relative z-10 flex flex-col md:flex-row justify-between items-end pb-10">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-end pb-4 md:pb-0">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 1 }}
-                    className="font-jetbrains text-xs md:text-sm text-gray-400 max-w-xs"
+                    className="font-jetbrains text-xs text-gray-400 max-w-xs space-y-1"
                 >
                     <p>PUNE, MH | +91 9509145561</p>
                     <p>VIJAYAYUSHI0@GMAIL.COM</p>
-                    <div className="mt-4 flex gap-2">
-                        <span className="px-2 py-1 border border-white/20 rounded-full">DATA ENGINEER</span>
-                        <span className="px-2 py-1 border border-white/20 rounded-full">ETL SPECIALIST</span>
+                    <div className="pt-4 flex gap-2">
+                        <span className="px-3 py-1 border border-white/20 rounded-full text-[10px]">DATA ENGINEER</span>
+                        <span className="px-3 py-1 border border-white/20 rounded-full text-[10px]">ETL SPECIALIST</span>
                     </div>
                 </motion.div>
 
@@ -54,12 +71,12 @@ export default function Hero() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.8, duration: 1 }}
-                    className="text-right"
+                    className="text-right mt-8 md:mt-0"
                 >
-                    <h2 className="text-4xl md:text-6xl font-playfair italic text-electric-blue">
+                    <h2 className="text-3xl md:text-5xl font-playfair italic text-electric-blue">
                         The Data Couturier
                     </h2>
-                    <p className="font-jetbrains text-xs mt-2 text-gray-400">
+                    <p className="font-jetbrains text-[10px] mt-2 text-gray-400 tracking-widest">
                         EST. 2021 — WEAVING DATA INTO INSIGHTS
                     </p>
                 </motion.div>
@@ -70,7 +87,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 hidden md:block"
             >
                 <div className="w-[1px] h-24 bg-gradient-to-b from-white to-transparent" />
             </motion.div>

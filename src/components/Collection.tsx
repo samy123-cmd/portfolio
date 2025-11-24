@@ -12,7 +12,7 @@ const skills = [
 
 export default function Collection() {
     return (
-        <section className="relative py-24 px-4 md:px-12 bg-fashion-black overflow-hidden">
+        <section className="relative py-24 px-6 md:px-20 bg-fashion-black overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <Image
                     src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=2574&auto=format&fit=crop"

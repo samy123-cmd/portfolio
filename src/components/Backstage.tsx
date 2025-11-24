@@ -5,7 +5,7 @@ import { Mail, Linkedin, Phone } from "lucide-react";
 
 export default function Backstage() {
     return (
-        <section className="py-24 px-4 md:px-12 min-h-[50vh] flex flex-col justify-center">
+        <section className="py-24 px-6 md:px-20 min-h-[50vh] flex flex-col justify-center">
             <div className="max-w-4xl mx-auto w-full text-center">
                 <motion.h2
                     initial={{ opacity: 0, scale: 0.9 }}
