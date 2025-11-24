@@ -103,7 +103,7 @@ export default function Hero() {
                     {/* Image Container */}
                     <div className="relative w-full h-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 ease-out">
                         <Image
-                            src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=2070&auto=format&fit=crop"
+                            src="/hero.jpeg"
                             alt="Editorial Fashion Tech"
                             fill
                             className="object-cover"

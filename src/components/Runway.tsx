@@ -6,18 +6,18 @@ import { useRef } from "react";
 
 const seasons = [
     {
-        collection: "SS ’25",
+        collection: "SS '25",
         company: "BITWISE",
         role: "LEAD DATA ENGINEER",
         description: "Draped legacy ETL into modern Fabric silhouettes. Tailored high-performance pipelines for the next season of data.",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop"
+        image: "/bitwise.jpeg"
     },
     {
-        collection: "FW ’21",
+        collection: "FW '21",
         company: "CAPGEMINI",
         role: "SENIOR ANALYST",
         description: "Stitched scalable PySpark workloads for high-volume retail intelligence. A classic collection of robust data modeling.",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop"
+        image: "/capgemini.jpeg"
     },
 ];
 
@@ -44,7 +44,7 @@ export default function Runway() {
             </div>
 
             <div className="relative max-w-5xl mx-auto">
-                {/* Center Line */}
+                {/* Center Line*/}
                 <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 md:-translate-x-1/2">
                     <motion.div
                         style={{ height: lineHeight }}
@@ -60,8 +60,7 @@ export default function Runway() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.8 }}
-                            className={`relative flex flex-col md:flex-row gap-12 md:gap-24 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
-                                }`}
+                            className={`relative flex flex-col md:flex-row gap-12 md:gap-24 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                         >
                             {/* Timeline Marker */}
                             <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-fashion-black border border-white rounded-full md:-translate-x-[calc(50%-0.5px)] mt-2 z-10" />
