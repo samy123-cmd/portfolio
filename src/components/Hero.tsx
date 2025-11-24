@@ -65,24 +65,32 @@ export default function Hero() {
 
                 {/* Intro Copy */}
                 <div className="mt-12 md:mt-24 max-w-md">
-                    <p className="font-inter text-sm md:text-base text-gray-300 leading-relaxed text-justify">
+                    <p className="font-inter text-sm md:text-base text-gray-300 leading-relaxed text-justify mb-8">
                         Weaving raw data into high-performance insights.
                         Specializing in <span className="text-white font-medium">Microsoft Fabric</span>, <span className="text-white font-medium">Azure Synapse</span>, and <span className="text-white font-medium">Enterprise ETL</span>.
                         Designed for scalability, tailored for intelligence.
                     </p>
 
-                    <div className="mt-8 flex gap-6 items-center">
-                        <MagneticButton>
-                            <a
-                                href="/resume.pdf"
-                                download
-                                className="group flex items-center gap-3 px-8 py-4 bg-white text-fashion-black rounded-none hover:bg-electric-blue hover:text-white transition-all duration-500"
-                            >
-                                <span className="font-jetbrains text-xs tracking-widest">GET THE LOOKBOOK</span>
-                                <Download size={16} />
-                            </a>
-                        </MagneticButton>
-                    </div>
+                    <MagneticButton>
+                        <a
+                            href="/resume.pdf"
+                            download
+                            className="group relative flex items-center gap-4 px-8 py-4 border border-white/20 bg-transparent overflow-hidden transition-all duration-500 hover:border-white"
+                        >
+                            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]" />
+
+                            <div className="relative z-10 flex flex-col items-start mix-blend-difference text-white">
+                                <span className="font-jetbrains text-[10px] tracking-[0.2em] uppercase">
+                                    SS '25 COLLECTION
+                                </span>
+                                <span className="font-playfair text-xl italic leading-none mt-1">
+                                    Get the Lookbook
+                                </span>
+                            </div>
+
+                            <Download size={18} className="relative z-10 mix-blend-difference text-white group-hover:animate-bounce" />
+                        </a>
+                    </MagneticButton>
                 </div>
             </div>
 
@@ -116,7 +124,7 @@ export default function Hero() {
                         <div className="absolute top-6 right-6 opacity-50">
                             <div className="flex gap-[2px] h-8">
                                 {[...Array(20)].map((_, i) => (
-                                    <div key={i} className={`w-[${Math.random() > 0.5 ? '1px' : '3px'}] bg-white`} />
+                                    <div key={i} className={`w-[${i % 3 === 0 || i % 7 === 0 ? '3px' : '1px'}] bg-white`} />
                                 ))}
                             </div>
                         </div>
