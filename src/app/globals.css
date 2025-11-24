@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fashion-black: #0a0a0a;
+  --color-paper-white: #f4f4f5;
+  --color-electric-blue: #3b82f6;
+
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+  --font-jetbrains: var(--font-jetbrains);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  background: var(--color-fashion-black);
+  color: var(--color-paper-white);
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+}
+
+code, pre {
+  font-family: var(--font-jetbrains);
+}
