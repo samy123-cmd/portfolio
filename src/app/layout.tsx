@@ -32,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} antialiased bg-fashion-black text-paper-white`}
+        suppressHydrationWarning
       >
         <SmoothScroll>{children}</SmoothScroll>
       </body>
